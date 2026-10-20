@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1020" />
+    <meta name="description" content="Interactive 3D virtual campus tour of the East Point Group of Institutions, Bengaluru." />
+    <title>East Point Campus 3D</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1020'/%3E%3Cpath d='M12 44 32 14l20 30z' fill='%2338bdf8'/%3E%3Crect x='24' y='36' width='16' height='12' fill='%23e0f2fe'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <div id="loader">
+      <div class="spinner"></div>
+      <p>Building the campus…</p>
+    </div>
+
+    <header id="topbar">
+      <button id="menu-btn" class="icon-btn" aria-label="Toggle building list">☰</button>
+      <div class="brand">
+        <span class="dot"></span>
+        <div>
+          <h1 id="brand-name">East Point Campus 3D</h1>
+          <p id="brand-sub">Interactive virtual tour</p>
+        </div>
+      </div>
+    </header>
+
+    <aside id="sidebar" class="open">
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search blocks, colleges, facilities…" autocomplete="off" />
+      </div>
+      <ul id="list"></ul>
+      <p id="empty" class="hidden">No matches found.</p>
+    </aside>
+
+    <section id="info" class="hidden" aria-live="polite"></section>
+
+    <div id="tooltip" class="hidden"></div>
+
+    <canvas id="minimap" aria-label="Campus minimap"></canvas>
+
+    <nav id="toolbar">
+      <button id="btn-home" title="Back to the main gate">⌂<span>Gate</span></button>
+      <button id="btn-map" title="Whole campus from above">🗺<span>Map</span></button>
+      <button id="btn-tour" title="Drive from the main gate to the road diversion">▶<span>Tour</span></button>
+      <button id="btn-night" title="Day / Night">☾<span>Night</span></button>
+      <button id="btn-labels" title="Show / hide labels" class="active">🏷<span>Labels</span></button>
+      <button id="btn-full" title="Fullscreen">⛶<span>Full</span></button>
+    </nav>
+
+    <div id="hint">Drag to rotate · Scroll to zoom · Right-drag to pan · Click a building · ▶ Tour starts at the main gate</div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
